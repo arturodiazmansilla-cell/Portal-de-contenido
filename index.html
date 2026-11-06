@@ -51,6 +51,12 @@ section.tema.visible{display:block}
 .btn.morado{background:#7209B7}
 .cuadro.azul{background:#CAF0F8;border-color:#0077B6}
 .paso{background:#FFF7CC;border-left:8px solid #FF6B35;padding:10px 14px;margin:10px 0;border-radius:0 14px 14px 0}
+.btn.azulps{background:#1565C0;border-radius:20px}
+.pasos-ps{display:none;background:#E3F2FD;border:3px solid #1565C0;border-radius:10px;padding:14px 18px;margin:12px 0;font-family:Verdana,Arial,sans-serif;font-size:17px;line-height:1.5;color:#222;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.pasos-ps h3{margin:0 0 8px 0;color:#1565C0;font-size:21px}
+.pasos-ps ol.pasos{margin:0;padding-left:26px}
+.pasos-ps ol.pasos li{margin-bottom:8px}
+.pasos-ps code{background:#fff;border:1px solid #90CAF9;color:#B71C1C;font-weight:bold}
 .palabra-lectura{padding:2px 3px;border-radius:6px}
 .palabra-lectura.activa{background:#16A34A;color:#fff;font-weight:bold}
 .palabra-lectura.leida{background:#BBF7D0}
@@ -2128,7 +2134,22 @@ PROMEDIO TRIMESTRAL de los totales: 44,45</p>
 <tr><td style="background:#FED7AA"><b>DOMINGO</b></td><td></td><td></td><td></td></tr>
 </table>
 <p><button class="btn" onclick="copiarTablaExcel('tabla-sec6-1', this)">📋 Copiar para Excel</button> Luego abre Excel, haz clic en la primera celda y pega con Ctrl+V: queda en celdas, lista para llenar.</p>
-<p><button class="btn verde" onclick="alternarSolucion('sol-sec6-1', this)">👁️ Ver respuesta</button></p>
+<p><button class="btn azulps" onclick="alternarPasos('pasos-sec6-1', this)">👣 Ver Acción Paso a Paso</button> <button class="btn verde" onclick="alternarSolucion('sol-sec6-1', this)">👁️ Ver respuesta</button></p>
+<div class="pasos-ps" id="pasos-sec6-1">
+<h3>👣 Acción paso a paso — Clase 1 — Diseño de tablas: Estación Meteorológica</h3>
+<ol class="pasos">
+<li>Abre Excel con un libro en blanco. La tabla empieza en <b>B2</b>; la columna A queda libre.</li>
+<li>En <b>B1</b> escribe <b>ESTACIÓN METEOROLÓGICA</b>, selecciona <b>B1:E1</b> y pulsa <b>Inicio &gt; Combinar y centrar</b>. Ponlo en negrita, fondo azul, letra blanca y tamaño grande.</li>
+<li>En la fila 2 escribe los encabezados: <b>B2</b> DÍA, <b>C2</b> TEMPERATURA (°C), <b>D2</b> LLUVIAS (l/m²), <b>E2</b> HUMEDAD RELATIVA (%).</li>
+<li>En <b>B3:B9</b> escribe los días: LUNES, MARTES, MIÉRCOLES, JUEVES, VIERNES, SÁBADO, DOMINGO.</li>
+<li>Clic derecho en el título &gt; <b>Insertar comentario</b> (en Excel nuevo: <b>Nota</b>) y escribe la semana, por ejemplo: del 3 al 9 de noviembre.</li>
+<li>Validación de datos: selecciona <b>C3:C9</b> &gt; <b>Datos &gt; Validación de datos</b> &gt; <b>Decimal, entre -40 y 50</b>. En <b>D3:D9</b>: <b>Número entero, mayor o igual que 0</b>. En <b>E3:E9</b>: <b>Decimal, entre 0 y 100</b>.</li>
+<li>Formato condicional: selecciona <b>C3:C9</b> &gt; <b>Inicio &gt; Formato condicional &gt; Nueva regla &gt; Usar una fórmula</b> y escribe <code>=O(C3&lt;0;C3&gt;30)</code>. Elige un formato y pulsa Aceptar.</li>
+<li>Repite el formato condicional en <b>D3:D9</b> con <code>=O(D3=0;D3&gt;100)</code> y en <b>E3:E9</b> con <code>=O(E3&gt;75;E3&lt;25)</code>.</li>
+<li>Rellena <b>C3:E9</b> con valores inventados que respeten la validación.</li>
+<li>Protege la hoja: <b>Revisar &gt; Proteger hoja &gt; Aceptar</b>, cuando ya tengas los datos.</li>
+</ol>
+</div>
 <div class="solucion" id="sol-sec6-1" style="display:none;background:#E8F5E9;border:3px solid #2E7D32;border-radius:16px;padding:16px;margin:12px 0">
 <h3>✅ Solución — Estación Meteorológica (ejemplo inventado)</h3>
 <p>Estos valores son un ejemplo inventado, como pide el libro. Lo importante es que tus valores respeten la validación y que el formato cambie en los casos indicados.</p>
@@ -2172,7 +2193,23 @@ PROMEDIO TRIMESTRAL de los totales: 44,45</p>
 <tr><td><b>Total por mes</b></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <p><button class="btn" onclick="copiarTablaExcel('tabla-sec6-2', this)">📋 Copiar para Excel</button> Luego abre Excel, haz clic en la primera celda y pega con Ctrl+V: queda en celdas, lista para llenar.</p>
-<p><button class="btn verde" onclick="alternarSolucion('sol-sec6-2', this)">👁️ Ver respuesta</button></p>
+<p><button class="btn azulps" onclick="alternarPasos('pasos-sec6-2', this)">👣 Ver Acción Paso a Paso</button> <button class="btn verde" onclick="alternarSolucion('sol-sec6-2', this)">👁️ Ver respuesta</button></p>
+<div class="pasos-ps" id="pasos-sec6-2">
+<h3>👣 Acción paso a paso — Clase 2 — Función SUMA: Ventas de electrodomésticos</h3>
+<ol class="pasos">
+<li>Abre Excel con un libro en blanco. En <b>A1</b> escribe <b>VENTAS DE ELECTRODOMÉSTICOS</b>, en negrita y centrado.</li>
+<li>En la fila 2 escribe: <b>A2</b> PRODUCTO, de <b>B2</b> a <b>M2</b> los 12 meses (ENERO ... DIC.) y en <b>N2</b> CANTIDAD DE UNIDADES VENDIDAS.</li>
+<li>En <b>A3:A7</b> escribe: Teléfono Móvil, Lector de DVD, Cámara Digital, MP3, Televisión. En <b>A8</b> escribe <b>total de ventas por mes</b>.</li>
+<li>Comentario a cada producto: clic derecho &gt; <b>Insertar comentario</b> y escribe modelo, marca y precio.</li>
+<li>Validación: selecciona <b>B3:M7</b> &gt; <b>Datos &gt; Validación de datos &gt; Número entero, mayor o igual que 0</b>.</li>
+<li>Formato condicional en <b>B3:M7</b>: <b>Inicio &gt; Formato condicional &gt; Resaltar reglas de celdas &gt; Es menor que...</b> <code>10</code> con texto rojo. Luego <b>Es mayor que...</b> <code>100</code> con formato personalizado de texto azul.</li>
+<li>Escribe las ventas (valores inventados) en <b>B3:M7</b>.</li>
+<li>Total por producto: en <b>N3</b> escribe <code>=SUMA(B3:M3)</code> y pulsa Enter (o usa <b>Autosuma</b>). Copia hacia abajo hasta <b>N7</b>.</li>
+<li>Total por mes: en <b>B8</b> escribe <code>=SUMA(B3:B7)</code> y pulsa Enter. Copia hacia la derecha hasta <b>M8</b>.</li>
+<li>Gran total: en <b>N8</b> escribe <code>=SUMA(N3:N7)</code>. Debe dar lo mismo que <code>=SUMA(B8:M8)</code>.</li>
+<li>Protege la hoja: <b>Revisar &gt; Proteger hoja</b>, cuando termines.</li>
+</ol>
+</div>
 <div class="solucion" id="sol-sec6-2" style="display:none;background:#E8F5E9;border:3px solid #2E7D32;border-radius:16px;padding:16px;margin:12px 0">
 <h3>✅ Solución — Ventas de electrodomésticos (ejemplo inventado)</h3>
 <p>Estos números son un ejemplo inventado para practicar. En tu hoja, tus totales deben ser la suma de TUS números, no copies estos totales si tus números son distintos. Los números menores que 10 salen en rojo y los mayores que 100 en azul.</p>
@@ -2216,7 +2253,20 @@ PROMEDIO TRIMESTRAL de los totales: 44,45</p>
 <tr><td><b>Total</b></td><td></td><td></td><td></td></tr>
 </table>
 <p><button class="btn" onclick="copiarTablaExcel('tabla-sec6-3', this)">📋 Copiar para Excel</button> Luego abre Excel, haz clic en la primera celda y pega con Ctrl+V: queda en celdas, lista para llenar.</p>
-<p><button class="btn verde" onclick="alternarSolucion('sol-sec6-3', this)">👁️ Ver respuesta</button></p>
+<p><button class="btn azulps" onclick="alternarPasos('pasos-sec6-3', this)">👣 Ver Acción Paso a Paso</button> <button class="btn verde" onclick="alternarSolucion('sol-sec6-3', this)">👁️ Ver respuesta</button></p>
+<div class="pasos-ps" id="pasos-sec6-3">
+<h3>👣 Acción paso a paso — Clase 3 — Autosuma y fórmulas: Tiendas J&amp;J</h3>
+<ol class="pasos">
+<li>Abre Excel con un libro en blanco. En <b>A1</b> escribe <b>TIENDAS J&amp;J</b> y en <b>A2</b> <b>INFORME ECONOMICO 2012</b>.</li>
+<li>En la fila 4 escribe los encabezados: <b>A4</b> SUCURSAL, <b>B4</b> INGRESOS, <b>C4</b> EGRESOS, <b>D4</b> SALDO.</li>
+<li>En <b>A5:A10</b> escribe las sucursales, en <b>B5:C10</b> los ingresos y egresos, y en <b>A12</b> la palabra <b>Total</b>, como en el ejercicio.</li>
+<li>Saldo de Centro: en <b>D5</b> escribe <code>=B5-C5</code> y pulsa Enter (Ingresos menos Egresos).</li>
+<li>Copia <b>D5</b> hasta <b>D10</b>: selecciona D5, Ctrl+C, selecciona D6:D10 y Ctrl+V. Así cada sucursal tiene su saldo.</li>
+<li>Total de Ingresos: en <b>B12</b> escribe <code>=B5+B6+B7+B8+B9+B10</code>, o clic en B12 &gt; <b>Inicio &gt; Autosuma &gt; Suma</b> (revisa que el rango sea <b>B5:B10</b>) y Enter.</li>
+<li>Haz lo mismo en <b>C12</b> (Egresos) y en <b>D12</b> (Saldo).</li>
+<li>Revisa: un saldo negativo está bien. Además, Total de Ingresos menos Total de Egresos debe dar el Total de Saldo.</li>
+</ol>
+</div>
 <div class="solucion" id="sol-sec6-3" style="display:none;background:#E8F5E9;border:3px solid #2E7D32;border-radius:16px;padding:16px;margin:12px 0">
 <h3>✅ Solución — Tiendas J&amp;J</h3>
 <table style="font-size:22px">
@@ -2261,7 +2311,21 @@ PROMEDIO TRIMESTRAL de los totales: 44,45</p>
 <tr><td><b>MÚSICA</b></td><td>55</td><td>58</td><td>64</td><td></td></tr>
 </table>
 <p><button class="btn" onclick="copiarTablaExcel('tabla-sec6-4', this)">📋 Copiar para Excel</button> Luego abre Excel, haz clic en la primera celda y pega con Ctrl+V: queda en celdas, lista para llenar.</p>
-<p><button class="btn verde" onclick="alternarSolucion('sol-sec6-4', this)">👁️ Ver respuesta</button></p>
+<p><button class="btn azulps" onclick="alternarPasos('pasos-sec6-4', this)">👣 Ver Acción Paso a Paso</button> <button class="btn verde" onclick="alternarSolucion('sol-sec6-4', this)">👁️ Ver respuesta</button></p>
+<div class="pasos-ps" id="pasos-sec6-4">
+<h3>👣 Acción paso a paso — Clase 4 — Autosuma y Promedio: Boletín del 1er trimestre</h3>
+<ol class="pasos">
+<li>Abre Excel con un libro en blanco. En <b>A1</b> escribe <b>BOLETIN DEL 1ER TRIMESTRE</b>.</li>
+<li>En la fila 2 escribe: <b>A2</b> Materia, <b>B2</b> Evaluación 1, <b>C2</b> Evaluación 2, <b>D2</b> Evaluación 3, <b>E2</b> Promedio.</li>
+<li>En <b>A3:A10</b> escribe las materias y en <b>B3:D10</b> sus 3 evaluaciones, como en el ejercicio.</li>
+<li>Haz clic en <b>E3</b>, la celda del Promedio de Biología.</li>
+<li>Ve a <b>Inicio &gt; Autosuma &gt; flecha &#9660; &gt; Promedio</b>.</li>
+<li>Revisa que el rango propuesto sea <b>B3:D3</b> y pulsa Enter. Queda: <code>=PROMEDIO(B3:D3)</code>.</li>
+<li>Copia <b>E3</b> hasta <b>E10</b>: selecciona E3, Ctrl+C, selecciona E4:E10 y Ctrl+V.</li>
+<li>Si salen muchos decimales, selecciona <b>E3:E10</b> &gt; <b>Inicio &gt; Número</b> y deja 2 decimales.</li>
+<li>Revisa: cada promedio debe estar entre la nota más baja y la más alta de su materia. Ejemplo: Biología 65, 62 y 67 da 64,67.</li>
+</ol>
+</div>
 <div class="solucion" id="sol-sec6-4" style="display:none;background:#E8F5E9;border:3px solid #2E7D32;border-radius:16px;padding:16px;margin:12px 0">
 <h3>✅ Solución — Boletín del 1er trimestre</h3>
 <table style="font-size:22px">
@@ -4644,7 +4708,7 @@ function mostrarCurso(id, btn){
   window.scrollTo(0,0);
 }
 
-var ADMIN_HASH_INICIAL = '19513fdc9da4fb72a4fb66917548d3c90ff94d5419e1f2363eea89dfee1dd';
+var ADMIN_HASH_INICIAL = '19513fdc9da4fb72a4a05eb66917548d3c90ff94d5419e1f2363eea89dfee1dd';
 var enlacePendiente = '';
 var CURSOS_CLAVE = [
   {id:'1ro-primaria', nombre:'Primero de Primaria'},
@@ -5242,6 +5306,7 @@ function textoPlano(id){
   for(var k=0;k<cuadros.length;k++){ cuadros[k].style.display = 'block'; }
   var navs = clon.querySelectorAll('.tarjetas-nav');
   for(var n=0;n<navs.length;n++){ navs[n].remove(); }
+  var pps = clon.querySelectorAll('.pasos-ps'); for(var pp=0;pp<pps.length;pp++){ pps[pp].remove(); }
   var sols = clon.querySelectorAll('.solucion');
   for(var s=0;s<sols.length;s++){ sols[s].style.display = 'block'; }
   var diaps = clon.querySelectorAll('.diapositiva');
@@ -5454,6 +5519,18 @@ function alternarSolucion(id, btn){
   } else {
     el.style.display = 'none';
     if(btn) btn.textContent = '👁️ Ver respuesta';
+  }
+}
+function alternarPasos(id, btn){
+  var el = document.getElementById(id);
+  if(!el) return;
+  if(el.style.display === 'none' || el.style.display === ''){
+    el.style.display = 'block';
+    if(btn) btn.textContent = '🙈 Ocultar Acción Paso a Paso';
+    el.scrollIntoView();
+  } else {
+    el.style.display = 'none';
+    if(btn) btn.textContent = '👣 Ver Acción Paso a Paso';
   }
 }
 function verTemaSec6(id){
